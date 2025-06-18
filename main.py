@@ -7,7 +7,7 @@ class Main:
 
     print('Hoeveel kaarten wil je kopen?')
     aantal_kaarten = int(input('Aantal kaarten: ')) #aantal kaarten invoeren
-    for i in range(aantal_kaarten): #vragen naar de leeftijd en prijzen toekennen
+    for i in range(aantal_kaarten): #vragen naar de leeftijd en prijzen toekennen...
         print('Hoe oud ben je?')
         leeftijd = int(input('Leeftijd: ')) 
         if leeftijd < 4 and aantal_kaarten < 5: #tarieven toekennen
