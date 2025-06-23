@@ -1,48 +1,38 @@
 class Main:
-    def __init__(self):
-        self.bedrag1 = 5
-        self.bedrag2 = 10
-        self.bedrag3 = 8
-        
+    doorgaan = True
 
-    print('Hoeveel kaarten wil je kopen?')
-    aantal_kaarten = int(input('Aantal kaarten: ')) #aantal kaarten invoeren
-    for i in range(aantal_kaarten): #vragen naar de leeftijd en prijzen toekennen...
-        print('Hoe oud ben je?')
-        leeftijd = int(input('Leeftijd: ')) 
-        if leeftijd < 4 and aantal_kaarten < 5: #tarieven toekennen
-            print('Hoeveel kinderen zijn er onder de 4 jaar?')
-            aantal_kleuters = int(input('Aantal kinderen onder 4 jaar:  '))
-            
-            if aantal_kleuters == 0:
-                print('Je hoeft niets te betalen.')
-        elif leeftijd >= 4 and leeftijd <= 18:
-            bedrag1 = 5
-            print('Hoeveel kinderen zijn er tussen de 4 en 18 jaar?')
-            aantal_kinderen = int(input('Aantal kinderen tussen 4 en 18 jaar: '))
-            bedrag1_ = bedrag1 * aantal_kinderen
-            print('Je moet ' + str(bedrag1_) + ' euro betalen voor de kinderen.')
-        elif leeftijd >= 19 and leeftijd <= 65:
-            bedrag2 = 10
-            print('Hoeveel volwassenen zijn er tussen de 19 en 65 jaar?')
-            aantal_volwassenen = int(input('Aantal volwassenen: '))
-            bedrag2_ = bedrag2 * aantal_volwassenen
-            print('Je moet ' + str(bedrag2_) + ' euro betalen voor de volwassenen.')
-        elif leeftijd > 65:
-            bedrag3 = 8
-            print('Hoeveel senioren (65-plussers) zijn er?')
-            aantal_senioren = int(input('Aantal senioren: '))
-            bedrag3_ = bedrag3 * aantal_senioren
-            print('Je moet ' + str(bedrag3_) + ' euro betalen voor de senioren.')
+    while doorgaan:
+        totaalbedrag = 0
 
-    if(aantal_kaarten > 5):
-        print('Je krijgt 5 euro korting op de totale prijs.')     
-    totaal_bedrag = bedrag1_ + bedrag2_ + bedrag3_ - 5 #totaalbedrag berekenen
-    print('Het totaalbedrag is: ' + str(totaal_bedrag) + ' euro.')
-    print("U moet nog een parkeerkaart kopen voor 9.50 euro.")
-    totaal_bedrag_ = totaal_bedrag + 9.50
-    print("Het totaalbedrag inclusief parkeerkaart is: " + str(totaal_bedrag_) + ' euro.') #totaalbedrag inclusief parkeerkaart
-    print("Hierbij uw kassabon en uw ticket(s).") #kassabon eventueel nog grafisch maken
-    print("Bedankt voor uw bezoek en tot ziens!")
-    
-    
+        aantal_gasten = int(input("Hoeveel gasten bezoeken het pretpark? "))
+
+        for i in range(1, aantal_gasten + 1):
+            leeftijd = int(input(f"Wat is de leeftijd van gast {i}? "))
+
+            #Bepaal de toegangsprijs op basis van de leeftijd
+            if leeftijd < 4:
+                prijs = 0
+            elif leeftijd < 12:
+                prijs = 10
+            elif leeftijd < 65:
+                prijs = 20
+            else:
+                prijs = 15
+
+            print (f"De toegangsprijs voor gast {i} is: €{prijs}")
+            totaalbedrag += prijs
+
+        #Vraag naar parkeerkaartje
+        parkeerkaartje = input("\nWilt u een parkeerkaartje kopen voor €5? (j/n): ")
+        if parkeerkaartje.lower() == 'j':
+            totaalbedrag += 7.50
+            print("Het parkeerkaartje is toegevoegd aan het totaalbedrag.")
+
+        #Toon totaalbedrag
+        print(f"\n Totaal te betalen bedrag is: €{totaalbedrag:.2f}")
+
+        #Vraag of gebruiker opnieuw wil beginnen
+        opnieuw = input("\nWilt u nog een keer tickets invoeren? (j/n): ")
+        if opnieuw.lower() != 'j':
+            doorgaan = False
+            print("Bedankt en tot ziens!")
