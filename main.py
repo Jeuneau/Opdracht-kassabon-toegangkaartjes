@@ -26,7 +26,7 @@ class Main:
         #Vraag naar parkeerkaartje
         parkeerkaartje = input("\nWilt u een parkeerkaartje kopen voor €5? (j/n): ")
         if parkeerkaartje.lower() == 'j':
-            totaalbedrag += 7.50
+            totaalbedrag += 5
             print("Het parkeerkaartje is toegevoegd aan het totaalbedrag.")
 
         #Toon totaalbedrag
