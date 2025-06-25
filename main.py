@@ -5,8 +5,9 @@ class Main:
         totaalbedrag = 0
 
         aantal_gasten = int(input("Hoeveel gasten bezoeken het pretpark? "))
+        klantlijst = [str(i) for i in range(1, aantal_gasten + 1)]
 
-        for i in range(1, aantal_gasten + 1):
+        for i in klantlijst:
             leeftijd = int(input(f"Wat is de leeftijd van gast {i}? "))
 
             #Bepaal de toegangsprijs op basis van de leeftijd
