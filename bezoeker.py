@@ -3,4 +3,4 @@ class Bezoeker:
         self.naam = naam
         self.leeftijd = leeftijd
 
-   
+

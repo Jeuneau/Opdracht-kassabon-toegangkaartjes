@@ -1,13 +1,14 @@
-class Tarief :
-    def __init__(self, id, naam, prijs):
-        self.id = id
-        self.naam = naam
-        self.prijs = prijs
+class Tarief:
+    import json
 
-    def __str__(self):
-        return f"Tarief(id={self.id}, naam='{self.naam}', prijs={self.prijs})"
+    x = {
+        "De tarieven voor de toegang tot het pretpark zijn als volgt:": "",
+        "Kinderen jonger dan 4 jaar": "gratis",
+        "Kinderen van 4 t/m 18 jaar": 5, 
+        "Volwassenen van 19 t/m 65 jaar": 10,
+        "65-plussers": 8,
+        "Bij 5 personen of meer krijgt u 5 euro korting.": ""
+        }
 
-    def __repr__(self):
-        return self.__str__()
-    
-    
+    y = json.dumps(x, indent = 4)   
+    print(y) 
