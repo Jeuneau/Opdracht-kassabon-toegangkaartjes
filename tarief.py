@@ -3,9 +3,9 @@ class Tarief:
 
     x = {
         "De tarieven voor de toegang tot het pretpark zijn als volgt:": "",
-        "Kinderen jonger dan 4 jaar": "gratis",
-        "Kinderen van 4 t/m 18 jaar": 5, 
-        "Volwassenen van 19 t/m 65 jaar": 10,
+        "Jonger dan 4 jaar": "gratis",
+        "4 t/m 18 jaar": 5, 
+        "19 t/m 65 jaar": 10,
         "65-plussers": 8,
         "Bij 5 personen of meer krijgt u 5 euro korting.": ""
         }
