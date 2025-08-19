@@ -1,4 +1,6 @@
-class Main:
+import tarief
+class Main(tarief.Tarief):
+    
     doorgaan = True
 
     while doorgaan:
@@ -37,3 +39,5 @@ class Main:
         if opnieuw.lower() != 'j':
             doorgaan = False
             print("Bedankt en tot ziens!")
+
+        
